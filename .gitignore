@@ -8,3 +8,6 @@ cdk.out
 
 # Misc
 .DS_Store
+
+# Prevent generated schemas being added
+*.schema.json
