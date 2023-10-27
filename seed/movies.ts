@@ -1,4 +1,4 @@
-import {Movie, MovieCast } from '../shared/types'
+import {Movie, MovieCast } from '../shared/types' //updated imports
 
 export const movies : Movie[] = [
   {
@@ -55,6 +55,7 @@ export const movies : Movie[] = [
   },
 ];
 
+// new movieCast data
 export const movieCasts: MovieCast[] = [
   {
     movieId: 1234,

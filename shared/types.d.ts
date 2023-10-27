@@ -12,6 +12,7 @@ export type Movie = {
     vote_count: number
   }
 
+// new type declarations
 export type MovieCast = {
     movieId: number;
     actorName: string;

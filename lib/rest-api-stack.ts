@@ -7,7 +7,7 @@ import * as apig from "aws-cdk-lib/aws-apigateway";
 import { Construct } from "constructs";
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 import { generateBatch } from "../shared/util";
-import { movies, movieCasts } from "../seed/movies";
+import { movies, movieCasts } from "../seed/movies"; //updated imports
 
 export class RestAPIStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -20,6 +20,7 @@ export class RestAPIStack extends cdk.Stack {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       tableName: "Movies",
     });
+    //new movieCast table
     const movieCastsTable = new dynamodb.Table(this, "MovieCastTable", {
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       partitionKey: { name: "movieId", type: dynamodb.AttributeType.NUMBER },
@@ -90,6 +91,7 @@ export class RestAPIStack extends cdk.Stack {
           },
         });  
         
+        // new function
         const getMovieCastMembersFn = new lambdanode.NodejsFunction(
           this,
           "GetCastMemberFn",
